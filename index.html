@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alone on the Net....</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link media="screen" href="css/reset.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/alone.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/player.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/tools.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/inventaires.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/byrei-dyndiv_0.5.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/mapper.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/navigation.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/form_nom.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/actions.css" type="text/css" rel="stylesheet" />
+    <link media="screen" href="css/chat.css" type="text/css" rel="stylesheet" />
+    <!-- <script src="js/detect-zoom.js"></script> -->
+    <script src="js/byrei-dyndiv_1.0rc1.js"></script>
+    <script src="js/alone.js"></script>
+    <script src="js/json.js"></script>
+    <script src="js/func_player.js"></script>
+    <script src="js/func_refresh.js"></script>
+    <script src="js/func_chat.js"></script>
+    <script src="js/commentaires.js"></script>
+    <script src="js/listener.js"></script>
+    <script src="js/calculs.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/inventaires.js"></script>
+    <script src="js/textes.js"></script>
+    <script src="js/form_nom.js"></script>
+    <script src="js/func_map.js"></script>
+</head>
+
+<body>
+    <div class="tdbord">
+        <div>
+            <div id="inf_aide" class="inf_aide">Les touches :<br/>i pour l'inventaire.<br/>Les flêches pour se déplacer.<br/></div>
+            <div onclick="langue(0);">fr</div>
+            <div onclick="langue(1);">us</div>
+            <div id="inf_nom" class="inf_nom"></div>
+            <div id="inf_vie" class="inf_vie"></div>
+            <div id="inf_soif" class="inf_soif"></div>
+            <div id="inf_faim" class="inf_faim"></div>
+            <div id="inf_moral" class="inf_moral"></div>
+            <div id="inf_fatigue" class="inf_fatigue">0</div>
+            <div id="inf_jours" class="inf_jours"></div>
+            <div id="inf_itools" class="inf_itools"></div>
+            <div id="inf_evie" class="inf_vie"></div>
+            <div id="inf_esoif" class="inf_soif"></div>
+            <div id="inf_efaim" class="inf_faim"></div>
+            <div id="inf_emoral" class="inf_moral"></div>
+            <div id="inf_pos_x" class="inf_pos_x"></div>
+            <div id="inf_pos_y" class="inf_pos_y"></div>
+        </div>
+
+
+    </div>
+    <div id="viewport">
+        <div id="viewport2">
+            <div id="actions">
+                <div id="action_1" class="action action_1" title="coupez des arbres" onclick="tools(10);"></div>
+                <div id="action_2" class="action action_2" title="ceuillez des fruits" onclick="tools(11);"></div>
+                <div id="action_3" class="action action_3" title="minez sur les rochers" onclick="tools(12);"></div>
+                <div id="action_4" class="action action_4" title="cueillez des baies" onclick="tools(13);"></div>
+                <div id="action_5" class="action action_5" title="ouvrir un coffre" onclick="tools(14);"></div>
+            </div>
+            <div id="mapper">
+                <div id="map"></div>
+            </div>
+            <div class="nav">
+                <div id="n" class="n bouton" onclick="UP()"></div>
+                <div id="s" class="s bouton" onclick="DOWN()"></div>
+                <div id="e" class="e bouton" onclick="LEFT()"></div>
+                <div id="o" class="o bouton" onclick="RIGHT()"></div>
+            </div>
+
+            <div class="tools_bar">
+                <div class="tools">
+                    <div id="T_console" class="bouton" onclick="tools(1)" title="Afficher le log ou pas">LOG</div>
+                    <div id="T_restart" class="bouton" onclick="tools(2)" title="Repartir à zéro"></div>
+                    <div id="T_pause" class="bouton" onclick="tools(3)" title="Faire une pause ou pas">RUN</div>
+                    <div id="T_ratiop" class="bouton" onclick="tools(4)" title="Accelerer le temps">V+</div>
+                    <div id="T_ratiom" class="bouton" onclick="tools(5)" title="Ralentire le temps">V-</div>
+                    <div id="T_rapide" class="bouton" onclick="tools(6)" title="Afficher la barre d'outils ou pas">I</div>
+                    <div id="T_aide" class="bouton" onclick="tools(7)" title="Aide">Help</div>
+                    <div id="T_zoom_plus" class="bouton" onclick="tools(10)" title="Zoomer">Z+</div>
+                    <div id="T_zoom_mois" class="bouton" onclick="tools(11)" title="Dé-zoomer">Z-</div>
+                </div>
+            </div>
+            <!--- gauges -->
+            <div id="g_0" style="display='';" class="gauge gauge_vie" title="vie">
+                <div class="gauge_stat">
+                    <div class="gauge_fond"></div>
+                    <div class="stat vie" id="gauge_vie"></div>
+                    <div class="ico" title="vie"></div>
+                </div>
+                <div class="info" id="vie" title="vie">100</div>
+            </div>
+            <div id="g_1" style="display='';" class="gauge gauge_soif" title="soif">
+                <div class="gauge_stat">
+                    <div class="gauge_fond"></div>
+                    <div class="stat soif" id="gauge_soif"></div>
+                    <div class="ico"></div>
+                </div>
+                <div class="info" id="soif" title="soif">0</div>
+            </div>
+            <div id="g_2" style="display='';" class="gauge gauge_faim" title="faim">
+                <div class="gauge_stat">
+                    <div class="gauge_fond"></div>
+                    <div class="stat faim" id="gauge_faim"></div>
+                    <div class="ico"></div>
+                </div>
+                <div class="info" id="faim" title="faim">0</div>
+            </div>
+            <div id="g_3" style="display='';" class="gauge gauge_moral" title="moral">
+                <div class="gauge_stat">
+                    <div class="gauge_fond"></div>
+                    <div class="stat moral" id="gauge_moral"></div>
+                    <div class="ico"></div>
+                </div>
+                <div class="info" id="moral" title="moral">100</div>
+            </div>
+            <div id="g_4" style="display='';" class="gauge gauge_fatigue" title="voyant_fatigue">
+                <div class="gauge_stat">
+                    <div class="gauge_fond"></div>
+                    <div class="stat fatigue" id="gauge_fatigue"></div>
+                    <div class="ico"></div>
+                </div>
+                <div id="fatigue" class="info" title="fatigue"></div>
+            </div>
+        </div>
+
+        <div id="inventaire">
+            <div class="case_rapide">
+                <div class="case_fond"></div>
+                <div class="case_item" id="moi-1" title=""></div>
+                <div id="moi_t-1" class="case_texte"></div>
+            </div>
+            <div class="case_rapide">
+                <div class="case_fond"></div>
+                <div id="moi-2" class="case_item" title=""></div>
+                <div id="moi_t-2" class="case_texte"></div>
+            </div>
+            <div class="case_rapide">
+                <div class="case_fond"></div>
+                <div id="moi-3" class="case_item" title=""></div>
+                <div id="moi_t-3" class="case_texte"></div>
+            </div>
+            <div class="case_rapide">
+                <div class="case_fond"></div>
+                <div id="moi-4" class="case_item" title=""></div>
+                <div id="moi_t-4" class="case_texte"></div>
+            </div>
+            <div class="case_rapide">
+                <div class="case_fond"></div>
+                <div id="moi-5" class="case_item" title=""></div>
+                <div id="moi_t-5" class="case_texte"></div>
+            </div>
+            <div class="case_rapide">
+                <div class="case_fond"></div>
+                <div id="moi-6" class="case_item" title=""></div>
+                <div id="moi_t-6" class="case_texte"></div>
+            </div>
+            <div class="case_rapide">
+                <div class="case_fond"></div>
+                <div id="moi-7" class="case_item" title=""></div>
+                <div id="moi_t-7" class="case_texte"></div>
+            </div>
+            <div class="case_rapide">
+                <div class="case_fond"></div>
+                <div id="moi-8" class="case_item" title=""></div>
+                <div id="moi_t-8" class="case_texte"></div>
+            </div>
+        </div>
+        <div id="chat">
+            <div id="chat_move" class="dynDiv_moveParentDiv">Main courante</div>
+            <div id="chat_in" class="chat_in">Main courante</div>
+            <div class="dynDiv_resizeDiv_tl"></div>
+            <div class="dynDiv_resizeDiv_tr"></div>
+            <div class="dynDiv_resizeDiv_bl"></div>
+            <div class="dynDiv_resizeDiv_br"></div>
+        </div>
+        <div id="nom"></div>
+    </div>
+</body>
+
+</html>

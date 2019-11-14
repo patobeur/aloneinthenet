@@ -1,0 +1,46 @@
+#mapper {
+	position : absolute;
+	z-index:3;
+top: 0;
+right: 0;
+width: 100%;
+height: 100%;
+	margin:0;
+	padding:0;
+}
+#mapper #map {
+	position : absolute;
+	z-index:100;
+	//background-color : rgba(255,255,255,.1);
+	margin:0;
+	padding:0;
+	background-image:url(../img1/circuit_imprime.jpg);
+}
+
+#mapper #map .cases{
+	float:left;
+	font-size:0.4em;
+	color:rgba(0,0,0,0.5);
+	border:0px solid rgba(0,0,0,0.1);
+	opacity:0.4;
+	background-repeat:no-repeat;
+	background-position: 0px;
+	background-size: cover;
+}
+#mapper #map .cases:hover{
+	opacity:1;
+	cursor:not-allowed;
+}
+.feu {background-color : rgba(255,0,0,.1);}
+.eau {background-color : rgba(25,200,251,.1);}
+.terre {background-color : rgba(193,150,24,.1);}
+.glace {background-color : rgba(143,230,255,.1);}
+.herbe {background-color : rgba(0,255,0,.1);}
+.sable {background-color : rgba(200,200,200,.1);}
+.vide {background-color : rgba(255,255,255,0);}
+
+.coffre {background-image:url(../img1/coffre_numerique.png);}
+.baie {background-image:url(../img1/energie_bleu.png);}
+.arbre {background-image:url(../img1/energie_verte.png);}
+.arbre_fruitier {background-image:url(../img1/energie_rose.png);}
+.rocher {background-image:url(../img1/ordi.png);}

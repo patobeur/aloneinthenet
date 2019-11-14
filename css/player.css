@@ -1,0 +1,21 @@
+
+/* player */
+#mapper .players {
+	position : absolute;
+	top: 20px;
+	left: 120px;
+	margin:0;
+	padding:0;
+	width:10px;
+	height: 10px;
+	z-index:101;	
+	/* border-radius : 12px;*/
+	background-image:url(../img1/player_0.png);
+	background-repeat:no-repeat;
+	background-position: 0px;
+	background-size: cover;
+}
+#mapper .player0 {
+	clear:both;
+	background-image:url(../img1/player_1.png);
+}

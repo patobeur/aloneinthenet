@@ -1,0 +1,40 @@
+/*
+				<div class="actions">
+					<div id="action_1" class="action action_1"></div>
+					<div id="action_2" class="action action_2"></div>
+					<div id="action_3" class="action action_3"></div>
+					<div id="action_4" class="action action_4"></div>
+					<div id="action_5" class="action action_5"></div>
+				</div>
+*/
+/* player */
+#actions {
+	position : absolute;
+	top: 20px;
+	left: 20px;
+	margin:0;
+	padding:0;
+	width:100px;
+	height: auto;
+	/* border-radius : 12px;*/
+	background-color : rgba(0,0,0,.5);
+	z-index:999;
+	border : 2px solid black;
+	border-radius:12px;
+	overflow:hidden;
+}
+#actions .action {
+	width:100px;
+	height: 25px;
+	color : white;
+	/*background-image:url(../img_1/player_1.png);*/
+	cursor:pointer;
+}
+#actions .action:hover {
+	width:100px;
+	height: 25px;
+	color : black;
+	background-color : rgba(255,255,255,.8);
+	/*background-image:url(../img_1/player_1.png);*/
+	cursor:pointer;
+}

@@ -1,0 +1,52 @@
+/* tools */
+.tools_bar {
+	position : absolute;
+	top:-5px;
+	right:-480px;
+	width:500px;
+	height:50px;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color : rgba(0,0,0,.3);
+	cursor:pointer;
+	z-index:3;
+	border-radius : 5px;
+}
+.tools_bar:hover {
+	right:-10px;
+}
+.tools_bar .tools {
+	position : absolute;
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	right:0px;
+}
+.tools_bar .tools .bouton {
+	background-color : rgba(0,0,0,.1);
+	position : relative;
+	display:block;
+	text-align:center;
+	width:40px;
+	height: 40px;
+	padding:0px;
+	margin:5px;
+	z-index:31;
+	border-radius : 5px;
+	float:left;
+	cursor:pointer;
+		background-repeat:no-repeat;
+		background-position: center center;
+		background-size : 100%;
+}
+#T_log {/*float:right;*/}
+#T_refresh {}
+#T_pause {}
+#T_console {}
+#T_restart {background-image:url(../img_1/refresh.png);}
+#T_ratiop {}
+#T_zoom_plus {}
+#T_zoom_moins{}
+		

@@ -1,0 +1,59 @@
+{
+    "objets": [{
+            "nom": "Pomme",
+            "type": "consomable",
+            "description": "Une belle Pomme",
+            "stackable": "oui",
+            "vie": 2,
+            "faim": 5,
+            "soif": 0,
+            "moral": 2,
+            "fatigue": 2,
+            "img": "pomme.png",
+            "emcombrement": 1,
+            "charge": 1
+        },
+        {
+            "nom": "Banane",
+            "type": "consomable",
+            "description": "Une belle banane.",
+            "stackable": "oui",
+            "vie": 2,
+            "faim": 5,
+            "soif": 0,
+            "moral": 2,
+            "fatigue": 2,
+            "img": "banane.png",
+            "emcombrement": 1,
+            "charge": 1
+        },
+        {
+            "nom": "Orange",
+            "type": "consomable",
+            "description": "Une belle Orange.",
+            "stackable": "oui",
+            "vie": 2,
+            "faim": 5,
+            "soif": 0,
+            "moral": 2,
+            "fatigue": 2,
+            "img": "orange.png",
+            "emcombrement": 1,
+            "charge": 1
+        },
+        {
+            "nom": "Hache",
+            "type": "outils",
+            "description": "Une belle Hache",
+            "stackable": "non",
+            "vie": "",
+            "faim": "",
+            "soif": "",
+            "moral": "",
+            "fatigue": "",
+            "img": "hache.png",
+            "emcombrement": 5,
+            "charge": ""
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+
+ #nom_ask {
+	position : absolute;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	z-index:70;
+	overflow:hidden;
+	z-index:200;
+	background-color : rgba(0,0,0,.9);
+	text-align:center;
+ 
+}
+ #myForm {
+	background-color : rgba(255,255,255,0.1);
+	text-align:center;
+ }
+ #nom {
+	position : absolute;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	z-index:70;
+	overflow:hidden;
+	z-index:200;
+	text-align:center;
+ 
+}
+ #form {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 230px;
+	height: 160px;
+	margin:0px;
+	padding:0px;
+	margin-left: -115px;
+	margin-top: -90px;
+	background-color : rgba(255,255,255,.8);
+	border-radius : 7px;
+ }
+ #nom h1{
+	 font-size:3em;
+ }
+ #nom h2{
+	 font-size:.9em;
+	 padding-top:10px;
+	 padding-bottom:10px;
+ }
+ #nom h3{
+	font-size:1.5em;
+	padding-top:5px;
+	padding-bottom:10px;
+	margin-top:10px;
+	border-radius : 7px;
+	background-color : rgba(0,0,0,0.1);
+	cursor : pointer;
+ }
+ #nom .inputname{
+	text-align:center;
+	width:180px;
+	height:20px;
+	font-size:1em;
+	border-radius : 15px;
+	background-color : rgba(255,255,255,0.9);
+	cursor : pointer;
+	border : 2px solid white;
+ }
+ #nom .span{
+	width:20px;
+	font-size:.8em;
+	margin-left:5px;
+	border-radius : 15px;
+	background-color : rgba(255,255,255,0.9);
+	cursor : pointer;
+	border : 2px solid white;
+ }
+

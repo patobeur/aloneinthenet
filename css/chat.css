@@ -1,0 +1,53 @@
+#chat {
+    width: 200px;
+    height: 100px;
+    right: 25px;
+    bottom: 100px;
+    position: absolute;
+    z-index: 61;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(255, 0, 0, 1);
+    opacity: 0.6;
+}
+
+#chat:hover {
+    opacity: 1;
+}
+
+#chat_in {
+    position: absolute;
+    width: 100%;
+    border: 0;
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: 0px;
+    margin-top: 14px;
+    height: auto;
+    background-color: rgba(255, 255, 255, .5);
+    font-family: arial;
+    font-size: .7em;
+    overflow: auto;
+}
+
+#chat_move {
+    font-size: .9em;
+    text-align: left;
+    /*filter:alpha(opacity=50);*/
+    /*opacity:0.5;*/
+    color: #fff;
+    height: 15px;
+    left: 0;
+    right: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-height: 500px) {
+    #chat {
+        bottom: original;
+        top: 60px;
+    }
+}
